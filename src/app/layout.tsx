@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { JetBrains_Mono, Instrument_Serif } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
+import Head from "next/head";
+import Header from "@/components/Header";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -32,6 +34,7 @@ export default function RootLayout({
         className={`${fontVariables} antialiased bg-background overscroll-y-auto sm:overscroll-y-none scroll-smooth`}
       >
         <ThemeProvider enableSystem={true} disableTransitionOnChange={true}>
+          <Header />
           {children}
         </ThemeProvider>
       </body>

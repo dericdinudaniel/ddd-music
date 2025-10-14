@@ -1,13 +1,12 @@
 import Background from "@/components/Background";
 import { SlideFadeIn } from "@/components/SlideFadeIn";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 export default function Home() {
   return (
     <div>
       <Background className="flex flex-col justify-center items-center align-middle">
         <div
-          className="font-bold font-header tracking-[.2rem] flex gap-x-3 md:gap-x-4 xl:gap-x-5 items-center"
+          className="font-bold font-header tracking-[.2rem] flex gap-x-3 md:gap-x-4 xl:gap-x-5 items-center pt-10"
           data-text-cursor
         >
           <div className="text-xl sm:text-2xl md:text-2xl lg:text-4xl xl:text-4xl 2xl:text-4xl">
