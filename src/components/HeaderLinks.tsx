@@ -1,0 +1,27 @@
+import Link from "next/link";
+import React from "react";
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/links", label: "Links" },
+];
+
+const HeaderLinks = () => {
+  return (
+    <div className="flex items-center gap-x-2 sm:gap-x-3">
+      {links.map((link) => (
+        <span
+          data-cursor-generic-padded='{"top": 4, "right": 7, "bottom": 7, "left": 7}'
+          key={link.href}
+          className="font-semibold text-base sm:text-base lg:text-lg select-none"
+        >
+          <Link href={link.href} className="underline-fade">
+            {link.label}
+          </Link>
+        </span>
+      ))}
+    </div>
+  );
+};
+
+export default HeaderLinks;
