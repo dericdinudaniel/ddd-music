@@ -52,7 +52,7 @@ export default function LinksPage() {
             <div className="">
               <SlideFadeIn delay={0.2} direction="left">
                 <h1
-                  className="text-3xl md:text-4xl font-semibold font-header tracking-wide"
+                  className="text-4xl md:text-5xl font-semibold font-header tracking-wide"
                   data-text-cursor
                 >
                   music by deric

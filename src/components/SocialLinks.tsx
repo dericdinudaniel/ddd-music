@@ -25,7 +25,7 @@ const TikTok = ({ className }: { className?: string }) => (
 );
 
 const SoundCloud = ({ className }: { className?: string }) => (
-  <div className={twMerge(className, "size-6 md:size-8 xl:size-10")}>
+  <div className={twMerge(className, "size-8 md:size-8 xl:size-10")}>
     <Image
       src="/icons/soundcloud-black.png"
       alt="SoundCloud"
@@ -80,7 +80,7 @@ const SocialLinkItem = ({ name, icon: Icon, link }: Social) => {
         rel="noopener noreferrer"
         aria-label={name}
       >
-        <Icon className="size-6 md:size-6 xl:size-8 hover:scale-115 hover:rotate-1 transition-transform duration-290" />
+        <Icon className="size-7 md:size-7 xl:size-8 hover:scale-115 hover:rotate-1 transition-transform duration-290" />
       </Link>
     </div>
   );
@@ -88,7 +88,7 @@ const SocialLinkItem = ({ name, icon: Icon, link }: Social) => {
 
 const SocialLinks = () => {
   return (
-    <div className="flex gap-x-6 sm:gap-x-8 items-center">
+    <div className="flex gap-x-8 items-center">
       {socials.map((social, index) => (
         <SlideFadeIn
           key={social.name}
