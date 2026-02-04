@@ -6,6 +6,7 @@ import Head from "next/head";
 import Header from "@/components/Header";
 import { CustomCursorProvider } from "@/components/CustomCursorProvider";
 import CustomCursor from "@/components/CustomCursor";
+import Footer from "@/components/Footer";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -63,6 +64,7 @@ export default function RootLayout({
             <CustomCursor />
             <Header />
             {children}
+            <Footer />
           </CustomCursorProvider>
         </ThemeProvider>
       </body>
