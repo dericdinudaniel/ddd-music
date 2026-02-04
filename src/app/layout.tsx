@@ -21,8 +21,31 @@ const fonts = [jetbrainsMono.variable, instrumentSerif.variable];
 const fontVariables = fonts.join(" ");
 
 export const metadata: Metadata = {
-  title: "Deric Dinu Daniel",
-  description: "Built by Deric",
+  metadataBase: new URL("https://musicbyderic.com"),
+  title: "music by deric",
+  description: "music by deric",
+  openGraph: {
+    title: "music by deric",
+    description: "music by deric",
+    url: "/",
+    siteName: "music by deric",
+    images: [
+      {
+        url: "/images/shrey.jpg",
+        width: 1200,
+        height: 630,
+        alt: "music by deric",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "music by deric",
+    description: "music by deric",
+    images: ["/images/shrey.jpg"],
+  },
 };
 
 export default function RootLayout({
