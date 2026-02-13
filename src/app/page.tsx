@@ -1,5 +1,6 @@
 import Background from "@/components/Background";
 import { SlideFadeIn } from "@/components/SlideFadeIn";
+import SocialLinks from "@/components/SocialLinks";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
             </h1>
           </SlideFadeIn>
         </div>
+        <SocialLinks />
       </Background>
     </div>
   );
