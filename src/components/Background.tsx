@@ -178,7 +178,7 @@ const Background = ({
       }
 
       const width = window.innerWidth;
-      if (width <= 480) sizeScaleRef.current = 0.2;
+      if (width <= 480) sizeScaleRef.current = 0.3;
       else if (width <= 768) sizeScaleRef.current = 0.4;
       else if (width <= 1024) sizeScaleRef.current = 0.6;
       else sizeScaleRef.current = 1.0;

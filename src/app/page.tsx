@@ -34,7 +34,9 @@ export default function Home() {
             </h1>
           </SlideFadeIn>
         </div>
-        <SocialLinks />
+        <div className="mt-2">
+          <SocialLinks />
+        </div>
       </Background>
     </div>
   );

@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "music by deric",
     images: [
       {
-        url: "/images/shrey.jpg",
+        url: "/images/profile/shrey.jpg",
         width: 1200,
         height: 630,
         alt: "music by deric",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "music by deric",
     description: "music by deric",
-    images: ["/images/shrey.jpg"],
+    images: ["/images/profile/shrey.jpg"],
   },
 };
 

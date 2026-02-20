@@ -4,27 +4,14 @@ import Background from "@/components/Background";
 import LinkCard from "@/components/LinkCard";
 import SocialLinks from "@/components/SocialLinks";
 import { SlideFadeIn } from "@/components/SlideFadeIn";
-import { Music, Code, PenTool, User } from "lucide-react";
 import Image from "next/image";
 
 const links = [
   {
-    title: "first link",
-    url: "https://example.com",
-    icon: Music,
-    description: "a description",
-  },
-  {
-    title: "second link",
-    url: "https://example.com",
-    icon: PenTool,
-    description: "a description",
-  },
-  {
-    title: "third link",
-    url: "https://example.com",
-    icon: User,
-    description: "a description",
+    title: "Dua Lipa - Illusion (deric Remix)",
+    url: "https://soundcloud.com/musicbyderic/dua-lipa-illusion-deric-remix",
+    image: "/images/covers/dua-lipa_illusion_deric-remix.png",
+    description: "",
   },
 ];
 
@@ -39,7 +26,7 @@ export default function LinksPage() {
             <SlideFadeIn delay={0.1} direction="left" inMargin="0px">
               <div className="relative w-28 h-28 rounded-full border-2 border-[var(--border)] shadow-lg overflow-hidden">
                 <Image
-                  src="/images/rooftop.jpg"
+                  src="/images/profile/rooftop.jpg"
                   alt="Profile Picture"
                   fill
                   sizes="400px"
