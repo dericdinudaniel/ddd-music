@@ -87,7 +87,7 @@ const Background = ({
   const mouseBlobLerpRef = useRef<[number, number]>([0.5, 0.5]);
   const mouseVelocityRef = useRef(0);
   const ripplesRef = useRef<{ center: [number, number]; startTime: number }[]>(
-    []
+    [],
   );
   const cursorBaseSize = 0.2;
   const sizeScaleRef = useRef(1.0);
@@ -119,7 +119,7 @@ const Background = ({
     const vertexShader = compileShader(vertexShaderSource, gl.VERTEX_SHADER);
     const fragmentShader = compileShader(
       fragmentShaderSource,
-      gl.FRAGMENT_SHADER
+      gl.FRAGMENT_SHADER,
     );
 
     if (!vertexShader || !fragmentShader) return;
@@ -140,7 +140,7 @@ const Background = ({
     gl.bufferData(
       gl.ARRAY_BUFFER,
       new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]),
-      gl.STATIC_DRAW
+      gl.STATIC_DRAW,
     );
 
     const positionLocation = gl.getAttribLocation(program, "a_position");
@@ -152,7 +152,7 @@ const Background = ({
     const sizesLocation = gl.getUniformLocation(program, "u_sizes");
     const rippleCentersLocation = gl.getUniformLocation(
       program,
-      "u_rippleCenters"
+      "u_rippleCenters",
     );
     const rippleTimesLocation = gl.getUniformLocation(program, "u_rippleTimes");
     const rippleCountLocation = gl.getUniformLocation(program, "u_rippleCount");
@@ -199,7 +199,7 @@ const Background = ({
       gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
 
       ripplesRef.current = ripplesRef.current.filter(
-        (r) => (performance.now() - r.startTime) / 1000 < 2.0
+        (r) => (performance.now() - r.startTime) / 1000 < 2.0,
       );
 
       for (let i = 0; i < ripplesRef.current.length; i++) {

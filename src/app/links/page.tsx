@@ -42,9 +42,9 @@ export default function LinksPage() {
                   src="/images/rooftop.jpg"
                   alt="Profile Picture"
                   fill
+                  sizes="400px"
                   className="object-cover scale-[3.0] object-[center_28%] -translate-x-5"
                   priority
-                  unoptimized
                 />
               </div>
             </SlideFadeIn>
