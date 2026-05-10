@@ -8,6 +8,12 @@ import Image from "next/image";
 
 const links = [
   {
+    title: "mix by deric // session 1",
+    url: "https://soundcloud.com/musicbyderic/mix-by-deric-session-1",
+    image: "/images/covers/deric-session-1.jpg",
+    description: "",
+  },
+  {
     title: "Dua Lipa - Illusion (deric Remix)",
     url: "https://soundcloud.com/musicbyderic/dua-lipa-illusion-deric-remix",
     image: "/images/covers/dua-lipa_illusion_deric-remix.png",
@@ -24,7 +30,10 @@ export default function LinksPage() {
           <div className="flex flex-col items-center gap-4 text-center mt-10">
             {/* Placeholder for Profile Pic - using div for now or could use an icon if no image */}
             <SlideFadeIn delay={0.1} direction="left" inMargin="0px">
-              <div className="relative w-28 h-28 rounded-full border-2 border-[var(--border)] shadow-lg overflow-hidden">
+              <div
+                className="relative w-28 h-28 rounded-full border-2 border-[var(--border)] shadow-lg overflow-hidden"
+                data-cursor-generic
+              >
                 <Image
                   src="/images/profile/rooftop.jpg"
                   alt="Profile Picture"
