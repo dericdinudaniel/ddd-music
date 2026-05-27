@@ -308,7 +308,11 @@ const CustomCursor: React.FC = () => {
   const detectElements = useCallback(() => {
     if (typeof window === "undefined") return;
 
-    const element = document.elementFromPoint(mousePosition.x, mousePosition.y);
+    const elements = document.elementsFromPoint(
+      mousePosition.x,
+      mousePosition.y
+    );
+    const element = elements[0] ?? null;
     if (!element) {
       setIsOverText(false);
       setHeaderLinkRect(null);
@@ -347,7 +351,11 @@ const CustomCursor: React.FC = () => {
     }
 
     // Check if subcursor is over text cursor element
-    const textElement = element.closest("[data-text-cursor]");
+    const textElement = elements.reduce<HTMLElement | null>((found, el) => {
+      if (found) return found;
+      const candidate = el.closest("[data-text-cursor]");
+      return candidate instanceof HTMLElement ? candidate : null;
+    }, null);
     setIsSubcursorOverText(!!textElement);
 
     // Handle subcursor generic hover elements
@@ -365,11 +373,10 @@ const CustomCursor: React.FC = () => {
       setSubcursorGenericBorderRadius(15);
     }
 
-    // Check if the element or any of its parents has the data-text-cursor attribute
     const shouldBeTextMode = !!textElement;
     setIsOverText(shouldBeTextMode);
 
-    if (shouldBeTextMode && textElement instanceof HTMLElement) {
+    if (shouldBeTextMode && textElement) {
       // Get the computed line height instead of full element height
       const computedStyle = window.getComputedStyle(textElement);
       const lineHeight = computedStyle.lineHeight;

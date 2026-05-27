@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 
 export default function Footer() {
   const pathname = usePathname();
+  const isEpk = pathname === "/epk";
   const isIndex = pathname === "/";
 
   const { scrollY } = useScroll();
@@ -50,6 +51,8 @@ export default function Footer() {
     }),
     [formationDelayDuration, effectDelayDuration, animationDuration],
   );
+
+  if (isEpk) return null;
 
   return (
     <div className="relative flex justify-center">

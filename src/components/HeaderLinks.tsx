@@ -4,6 +4,7 @@ import React from "react";
 const links = [
   { href: "/", label: "Home" },
   { href: "/links", label: "Links" },
+  { href: "/epk", label: "EPK" },
 ];
 
 const HeaderLinks = () => {
