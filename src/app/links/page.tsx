@@ -8,14 +8,14 @@ import Image from "next/image";
 
 const links = [
   {
-    title: "mix by deric // session 1",
-    url: "https://soundcloud.com/musicbyderic/mix-by-deric-session-1",
+    title: "mix by DDD // session 1",
+    url: "https://soundcloud.com/musicbyddd/mix-by-ddd-session-1",
     image: "/images/covers/deric-session-1.jpg",
     description: "",
   },
   {
     title: "Dua Lipa - Illusion (deric Remix)",
-    url: "https://soundcloud.com/musicbyderic/dua-lipa-illusion-deric-remix",
+    url: "https://soundcloud.com/musicbyddd/dua-lipa-illusion-deric-remix",
     image: "/images/covers/dua-lipa_illusion_deric-remix.png",
     description: "",
   },
@@ -49,9 +49,9 @@ export default function LinksPage() {
               <SlideFadeIn delay={0.2} direction="left">
                 <h1
                   className="text-4xl md:text-5xl font-semibold font-header tracking-wide"
-                  data-text-cursor
+                  data-text-cursors
                 >
-                  music by deric
+                  music by DDD
                 </h1>
               </SlideFadeIn>
             </div>

@@ -47,17 +47,17 @@ const socials = [
   {
     name: "Instagram",
     icon: Instagram,
-    link: "https://instagram.com/musicbyderic",
+    link: "https://instagram.com/musicbyddd",
   },
   {
     name: "TikTok",
     icon: TikTok,
-    link: "https://tiktok.com/@musicbyderic",
+    link: "https://tiktok.com/@musicbyddd",
   },
   {
     name: "SoundCloud",
     icon: SoundCloud,
-    link: "https://soundcloud.com/musicbyderic",
+    link: "https://soundcloud.com/musicbyddd",
   },
 ] as const;
 

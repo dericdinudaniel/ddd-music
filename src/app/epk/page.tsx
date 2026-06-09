@@ -31,15 +31,15 @@ const GENRES = ["house", "techno", "trance"];
 
 const RELEASES = [
   {
-    title: "mix by deric // session 1",
+    title: "mix by DDD // session 1",
     image: "/images/covers/deric-session-1.jpg",
-    url: "https://soundcloud.com/musicbyderic/mix-by-deric-session-1",
+    url: "https://soundcloud.com/musicbyddd/mix-by-ddd-session-1",
     type: "Mix",
   },
   {
     title: "Dua Lipa - Illusion (deric Remix)",
     image: "/images/covers/dua-lipa_illusion_deric-remix.png",
-    url: "https://soundcloud.com/musicbyderic/dua-lipa-illusion-deric-remix",
+    url: "https://soundcloud.com/musicbyddd/dua-lipa-illusion-deric-remix",
     type: "Remix",
   },
 ];
@@ -58,7 +58,7 @@ type GalleryImage = {
 const GALLERY: GalleryImage[] = [
   {
     src: "/images/profile/boat.jpg",
-    alt: "deric — boat party set",
+    alt: "ddd — boat party set",
     gridClass: "col-span-2 row-span-2 md:col-span-7",
     sizes: "(max-width: 768px) 100vw, 60vw",
     quality: 90,
@@ -66,7 +66,7 @@ const GALLERY: GalleryImage[] = [
   },
   {
     src: "/images/profile/shrey2.jpg",
-    alt: "deric — late night session",
+    alt: "ddd — late night session",
     gridClass: "md:col-span-5",
     sizes: "(max-width: 768px) 50vw, 44vw",
     quality: 90,
@@ -74,7 +74,7 @@ const GALLERY: GalleryImage[] = [
   },
   {
     src: "/images/profile/shrey.jpg",
-    alt: "deric performing live — rooftop set",
+    alt: "ddd performing live — rooftop set",
     gridClass: "md:col-span-5",
     sizes: "(max-width: 768px) 50vw, 44vw",
     quality: 90,
@@ -82,7 +82,7 @@ const GALLERY: GalleryImage[] = [
   },
   {
     src: "/images/profile/rooftop.jpg",
-    alt: "deric — rooftop DJ set, San Francisco",
+    alt: "ddd — rooftop DJ set, San Francisco",
     gridClass: "col-span-1 md:col-span-6 row-span-2",
     sizes: "(max-width: 768px) 50vw, 65vw",
     quality: 90,
@@ -92,7 +92,7 @@ const GALLERY: GalleryImage[] = [
   },
   {
     src: "/images/profile/sybil.jpeg",
-    alt: "deric — sybil",
+    alt: "ddd — sybil",
     gridClass: "col-span-1 md:col-span-6 row-span-2",
     sizes: "(max-width: 768px) 50vw, 52vw",
     quality: 90,
@@ -101,9 +101,9 @@ const GALLERY: GalleryImage[] = [
 ];
 
 const SOCIALS = [
-  { name: "Instagram", url: "https://instagram.com/musicbyderic" },
-  { name: "TikTok", url: "https://tiktok.com/@musicbyderic" },
-  { name: "SoundCloud", url: "https://soundcloud.com/musicbyderic" },
+  { name: "Instagram", url: "https://instagram.com/musicbyddd" },
+  { name: "TikTok", url: "https://tiktok.com/@musicbyddd" },
+  { name: "SoundCloud", url: "https://soundcloud.com/musicbyddd" },
 ];
 
 // ── Icons ───────────────────────────────────────────────────────────
@@ -229,7 +229,7 @@ export default function EPKPage() {
       const url = URL.createObjectURL(content);
       const link = document.createElement("a");
       link.href = url;
-      link.download = "deric-press-kit.zip";
+      link.download = "ddd-press-kit.zip";
       link.click();
       URL.revokeObjectURL(url);
     } catch (err) {
@@ -271,7 +271,7 @@ export default function EPKPage() {
         <motion.div className="absolute inset-[-4%]" style={{ y: heroImageY }}>
           <Image
             src="/images/profile/shrey.jpg"
-            alt="deric performing live"
+            alt="DDD performing live"
             fill
             className="object-cover object-[center_68%]"
             priority
@@ -307,13 +307,13 @@ export default function EPKPage() {
                 delay: 0.2,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="pointer-events-none w-fit font-header text-[20vw] md:text-[14vw] lg:text-[11vw] leading-[0.85] tracking-[-0.02em] lowercase"
+              className="pointer-events-none w-fit font-header text-[20vw] md:text-[14vw] lg:text-[11vw] leading-[0.85] tracking-[-0.02em]"
               style={{
                 textShadow: `0 0 80px ${C.accent}30`,
               }}
             >
               <span className="pointer-events-auto" data-text-cursor>
-                deric
+                DDD
               </span>
             </motion.h1>
 
@@ -379,7 +379,7 @@ export default function EPKPage() {
             <div className="relative aspect-[5/5] overflow-hidden rounded-sm">
               <Image
                 src="/images/profile/shrey2.jpg"
-                alt="deric — late night session"
+                alt="ddd — late night session"
                 fill
                 className="object-cover object-[center_60%]"
                 quality={90}
@@ -403,7 +403,7 @@ export default function EPKPage() {
                   paddingLeft: "1.5rem",
                 }}
               >
-                music by deric:
+                music by DDD:
               </blockquote>
             </Reveal>
 
@@ -413,14 +413,14 @@ export default function EPKPage() {
                 style={{ color: C.muted }}
               >
                 <p>
-                  <span className="font-bold">deric</span> is a music producer
-                  and DJ purely focused on electronic music - especially house,
-                  techno, and trance. deric is currently based in{" "}
+                  <span className="font-bold">DDD</span> is a music producer and
+                  DJ purely focused on electronic music - especially house,
+                  techno, and trance. DDD is currently based in{" "}
                   <span className="font-bold">San Francisco, CA</span>.
                 </p>
                 <p>
                   From intimate rooftop sessions overlooking San Francisco to
-                  boat parties under the Golden Gate Bridge, deric crafts
+                  boat parties under the Golden Gate Bridge, DDD crafts
                   immersive sets that take listeners on a journey.
                 </p>
               </div>
@@ -593,7 +593,7 @@ export default function EPKPage() {
                   Booking Inquiries
                 </h3>
                 <a
-                  href="mailto:booking@musicbyderic.com"
+                  href="mailto:booking@musicbyddd.com"
                   className="group flex w-full items-center transition-opacity duration-300 hover:opacity-70"
                 >
                   <span
@@ -601,7 +601,7 @@ export default function EPKPage() {
                     className="inline-flex items-center gap-3 px-2 py-1 text-base md:text-lg"
                   >
                     <Mail size={16} style={{ color: C.accent }} />
-                    booking@musicbyderic.com
+                    booking@musicbyddd.com
                   </span>
                 </a>
               </div>
@@ -616,7 +616,7 @@ export default function EPKPage() {
                   General Inquiries
                 </h3>
                 <a
-                  href="mailto:hello@musicbyderic.com"
+                  href="mailto:hello@musicbyddd.com"
                   className="group flex w-full items-center transition-opacity duration-300 hover:opacity-70"
                 >
                   <span
@@ -624,7 +624,7 @@ export default function EPKPage() {
                     className="inline-flex items-center gap-3 px-2 py-1 text-base md:text-lg"
                   >
                     <Mail size={16} style={{ color: C.accent }} />
-                    hello@musicbyderic.com
+                    hello@musicbyddd.com
                   </span>
                 </a>
               </div>
@@ -669,7 +669,7 @@ export default function EPKPage() {
               className="font-mono text-[10px] md:text-xs tracking-[.15em] uppercase"
               style={{ color: C.muted }}
             >
-              &copy; {new Date().getFullYear()} deric. All rights reserved.
+              &copy; {new Date().getFullYear()} DDD. All rights reserved.
             </p>
           </div>
         </Reveal>

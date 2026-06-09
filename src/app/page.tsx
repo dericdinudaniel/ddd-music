@@ -30,7 +30,7 @@ export default function Home() {
               className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-9xl 2xl:text-9xl"
               data-text-cursor
             >
-              deric
+              DDD
             </h1>
           </SlideFadeIn>
         </div>
