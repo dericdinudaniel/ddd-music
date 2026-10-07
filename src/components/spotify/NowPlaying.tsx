@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useNowPlaying } from "@/lib/hooks/useSpotify";
+
 import SongDisplay from "@/components/spotify/SongDisplay";
 import { BsSpotify } from "react-icons/bs";
 import { SkeletonSongDisplay } from "./Skeletons";

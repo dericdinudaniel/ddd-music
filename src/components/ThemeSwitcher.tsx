@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, useId, useRef } from "react";
+import { useEffect, useMemo, useState, useId, useRef, useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
 import {
   Sun,
@@ -12,6 +12,8 @@ import {
   Check,
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+
+const emptySubscribe = () => () => {};
 
 const iconMap = {
   light: <Sun className="mr-2 size-6" />,
@@ -41,14 +43,14 @@ const ThemeSwitcher = ({
   formationDelayDuration,
 }: ThemeSwitcherProps) => {
   const { theme, setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
   const [isOpen, setIsOpen] = useState(false);
   const labelId = useId();
   const dropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

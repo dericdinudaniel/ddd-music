@@ -20,62 +20,34 @@ const CustomCursorContext = createContext<CustomCursorContextType | undefined>(
   undefined
 );
 
-// Debounce utility with cancel function
-interface DebouncedFunction<T extends (...args: unknown[]) => void> {
-  (...args: Parameters<T>): void;
-  cancel: () => void;
-}
-
-const debounce = <T extends (...args: unknown[]) => void>(
-  func: T,
-  wait: number
-): DebouncedFunction<T> => {
-  let timeoutId: ReturnType<typeof setTimeout>;
-
-  const debouncedFn = (...args: Parameters<T>) => {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => func(...args), wait);
-  };
-
-  debouncedFn.cancel = () => {
-    clearTimeout(timeoutId);
-  };
-
-  return debouncedFn;
+const subscribeResize = (callback: () => void) => {
+  window.addEventListener("resize", callback, { passive: true });
+  return () => window.removeEventListener("resize", callback);
 };
+
+const getIsDesktop = () => {
+  if (typeof navigator === "undefined") return false;
+  const userAgent = navigator.userAgent.toLowerCase();
+  const isMobileDevice =
+    /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
+      userAgent
+    );
+  return !isMobileDevice;
+};
+
+const getServerSnapshot = () => false;
 
 export function CustomCursorProvider({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [isDesktop, setIsDesktop] = useState(false);
-  const sectionRef = useRef<HTMLDivElement | null>(null);
-
-  // Memoize device check function with debounce
-  const checkDevice = useCallback(() => {
-    const userAgent = navigator.userAgent.toLowerCase();
-    const isMobileDevice =
-      /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
-        userAgent
-      );
-    setIsDesktop(!isMobileDevice);
-  }, []);
-
-  const debouncedCheckDevice = useMemo(
-    () => debounce(checkDevice, 100),
-    [checkDevice]
+  const isDesktop = React.useSyncExternalStore(
+    subscribeResize,
+    getIsDesktop,
+    getServerSnapshot
   );
-
-  // Device check effect with cleanup
-  useEffect(() => {
-    checkDevice();
-    window.addEventListener("resize", debouncedCheckDevice, { passive: true });
-    return () => {
-      window.removeEventListener("resize", debouncedCheckDevice);
-      debouncedCheckDevice.cancel();
-    };
-  }, [checkDevice, debouncedCheckDevice]);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
   // Memoize derived values with stable references
   const isCursorVisible = useMemo(() => isDesktop, [isDesktop]);

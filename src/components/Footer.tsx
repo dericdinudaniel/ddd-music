@@ -12,20 +12,14 @@ export default function Footer() {
   const isIndex = pathname === "/";
 
   const { scrollY } = useScroll();
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrolledOnIndex, setScrolledOnIndex] = useState(false);
+  const isScrolled = !isIndex || scrolledOnIndex;
 
-  // 2) Subscribe to scrollY, _or_ override `isScrolled` immediately
   useEffect(() => {
-    // if you're off "/" _and_ the page _is_ scrollable → force scrolled
-    if (!isIndex) {
-      setIsScrolled(true);
-      return;
-    }
+    if (!isIndex) return;
 
-    // otherwise (on index & scrollable) do your 10px threshold
-    setIsScrolled(false);
-    const unsubscribe = scrollY.onChange((y) => {
-      setIsScrolled(y > 10);
+    const unsubscribe = scrollY.on("change", (y) => {
+      setScrolledOnIndex(y > 10);
     });
     return unsubscribe;
   }, [isIndex, scrollY]);
