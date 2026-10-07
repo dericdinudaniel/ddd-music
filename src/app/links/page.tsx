@@ -8,6 +8,13 @@ import Image from "next/image";
 
 const links = [
   {
+    title:
+      "beabadoobee feat. The Marías - All I Did Was Dream of You (DDD extended remix)",
+    url: "https://soundcloud.com/musicbyddd/all-i-did-was-dream-of-you-ddd-remix",
+    image: "/images/covers/aidwdoy-remix.jpg",
+    description: "",
+  },
+  {
     title: "mix by DDD // session 1",
     url: "https://soundcloud.com/musicbyddd/mix-by-ddd-session-1",
     image: "/images/covers/deric-session-1.jpg",
